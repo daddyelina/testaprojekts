@@ -166,16 +166,21 @@
                         const content = button.parentElement;
                         const container = content.parentElement;
                         const tabNumber = button.dataset.forTab;
-                        const tabToActivate = container.querySelector('.tabcontent[data-tab="${tabnumber}"]');
+                        console.log(tabNumber);
+                        const tabToActivate = document.querySelector('.tabcontent[data-tab="'+tabNumber+'"]');
+                        console.log(tabToActivate);
 
                         content.querySelectorAll(".tablink").forEach(button =>{
-                         button.classList.remove("tablink--active");   
+                         button.classList.remove("tablink--active");  
+
                         });
-                        container.querySelectorAll(".tabcontent").forEach(tab =>{
+                        console.log(document.querySelectorAll(".tabcontent"));
+                        document.querySelectorAll(".tabcontent").forEach(tab =>{
                          tab.classList.remove("tabcontent--active");   
+                         console.log("nonemts") 
                         });
                         button.classList.add("tablink--active");
-                        tabToActivate.classList.add("tabcontent--activate") ;
+                        tabToActivate.classList.add("tabcontent--active") ;
                     }); 
                 }) ;
             }
