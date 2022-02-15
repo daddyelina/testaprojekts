@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<button onclick="samazini()" ; style="background-color: rgb(214, 39, 39);"> Samazināt</button>
+  <input id="vertiba"  value="0" onchange=parbaudi(),problem() > </input> 
+<button onclick="palielini()" ; style="background-color: rgb(44, 155, 44);"> Palielināt</button>
+
+<script>
+    function samazini(){
+       document.getElementById("vertiba").value --;
+       parbaudi();
+    }
+    function palielini(){
+        document.getElementById("vertiba").value ++;
+        parbaudi();
+        
+    }   
+    function parbaudi(){
+        if(document.getElementById("vertiba").value<=0){
+            document.getElementById("vertiba").value=0
+        }
+    } 
+    function problem(){
+        if(isNaN(document.getElementById("vertiba").value)){
+            alert("Don't be dumb");
+            document.getElementById("vertiba").value=0
+        }
+    }
+</script>
+
+
+
+</body>
+
+
+</html>
